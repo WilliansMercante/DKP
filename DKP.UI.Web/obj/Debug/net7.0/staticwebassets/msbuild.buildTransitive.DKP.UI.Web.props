@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DKP.UI.Web.props" />
+</Project>

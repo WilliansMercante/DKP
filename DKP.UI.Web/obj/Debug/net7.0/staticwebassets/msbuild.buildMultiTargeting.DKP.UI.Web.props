@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DKP.UI.Web.props" />
+</Project>
