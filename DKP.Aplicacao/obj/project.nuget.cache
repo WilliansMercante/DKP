@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3/7h7okViXIofi7PNRaN4YdrdqBu1l9Y9oxhi3YQw+HPV22tHrARMPJeMcNZeNs64khr1cAGWKldv1OFVtDOjA==",
+  "dgSpecHash": "fYBtIBJqM0JiCPqypFA92NC1RMhBvdTZpwm4qC0yHiipwdyDe3fcMpvAAJrVscdNx/n1IUAtYCxjo/HnLJ5VWA==",
   "success": true,
   "projectFilePath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Aplicacao\\DKP.Aplicacao.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\willi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
