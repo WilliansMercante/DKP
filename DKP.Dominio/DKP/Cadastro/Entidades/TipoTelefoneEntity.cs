@@ -1,4 +1,4 @@
-﻿namespace DKP.Dominio.DKP.Cadastro
+﻿namespace DKP.Dominio.DKP.Cadastro.Entidades
 {
     public class TipoTelefoneEntity : EntidadeBase
     {

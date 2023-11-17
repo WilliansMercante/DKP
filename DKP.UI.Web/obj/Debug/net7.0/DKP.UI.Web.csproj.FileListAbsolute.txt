@@ -222,3 +222,5 @@ D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\obj\Debug\net7.0\DKP.UI.Web.pdb
 D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\obj\Debug\net7.0\DKP.UI.Web.genruntimeconfig.cache
 D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\obj\Debug\net7.0\ref\DKP.UI.Web.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.old.cshtml.rz.scp.css
+D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\bin\Debug\net7.0\DKP.ViewModel.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\bin\Debug\net7.0\DKP.ViewModel.pdb

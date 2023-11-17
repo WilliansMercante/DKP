@@ -3242,6 +3242,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "DKP.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/DKP.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DKP.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -9651,10 +9661,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "DKP.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../DKP.ViewModel/DKP.ViewModel.csproj",
+      "msbuildProject": "../DKP.ViewModel/DKP.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "DKP.ViewModel >= 1.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.11"
     ]
   },
@@ -9684,7 +9700,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.ViewModel\\DKP.ViewModel.csproj": {
+              "projectPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.ViewModel\\DKP.ViewModel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

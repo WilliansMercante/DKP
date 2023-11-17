@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\app.css.map"
     },
     {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\custom\\dkp\\cliente\\cadastro.css",
+      "PackagePath": "staticwebassets\\assets\\css\\custom\\dkp\\cliente\\cadastro.css"
+    },
+    {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\fonts\\.gitkeep",
       "PackagePath": "staticwebassets\\assets\\fonts\\.gitkeep"
     },
@@ -63,6 +67,30 @@
     {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\app.js.map",
       "PackagePath": "staticwebassets\\assets\\js\\app.js.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\dkp\\cadastro\\cadastro.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\dkp\\cadastro\\cadastro.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\dkp\\cadastro\\enums\\enumTipoEndereco.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\dkp\\cadastro\\enums\\enumTipoEndereco.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\dkp\\cadastro\\enums\\enumTipoTelefone.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\dkp\\cadastro\\enums\\enumTipoTelefone.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\dkp\\cadastro\\index.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\dkp\\cadastro\\index.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\utils\\ValidacaoCPF.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\ValidacaoCPF.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\utils\\formatacaoCPF.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\formatacaoCPF.js"
     },
     {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\favicon.ico",

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-
-using DKP.Dominio.DKP.Cadastro;
+using DKP.Dominio.DKP.Cadastro.Entidades;
 using DKP.ViewModel.DKP;
 
 namespace DKP.Aplicacao.Mapping

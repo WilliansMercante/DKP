@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bW0TqNDLYzCp256eEFTcz18R6W5QUBM9qi2vCMA781xv4YNTGDF4ke/ZJvdR2Z63gsngcvoA92vLkbbYWzr3dg==",
+  "dgSpecHash": "9nIkofPGs5/HnBjCRLCKeNwclsgedd53CVLFI8SHYKFqEPd7DrbXpsZquiMVua6pxSScvsGNUtWI0yd2/kp3MQ==",
   "success": true,
   "projectFilePath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.IoC\\DKP.IoC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\willi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

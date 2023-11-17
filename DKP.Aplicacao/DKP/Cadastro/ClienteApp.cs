@@ -2,7 +2,7 @@
 
 using DKP.Aplicacao.DKP.Cadastro.Interfaces;
 using DKP.Aplicacao.Mapping;
-using DKP.Dominio.DKP.Cadastro;
+using DKP.Dominio.DKP.Cadastro.Entidades;
 using DKP.ViewModel.DKP;
 
 namespace DKP.Aplicacao.DKP.Cadastro

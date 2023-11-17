@@ -1,0 +1,11 @@
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\bin\Debug\net7.0\DKP.ViewModel.deps.json
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\bin\Debug\net7.0\DKP.ViewModel.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\bin\Debug\net7.0\DKP.ViewModel.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.AssemblyInfoInputs.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.AssemblyInfo.cs
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.csproj.CoreCompileInputs.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\refint\DKP.ViewModel.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\ref\DKP.ViewModel.dll

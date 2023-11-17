@@ -4,14 +4,14 @@
     "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\DKP.Infra.csproj": {}
   },
   "projects": {
-    "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\DKP.Infra.csproj": {
+    "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Dominio\\DKP.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\DKP.Infra.csproj",
-        "projectName": "DKP.Infra",
-        "projectPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\DKP.Infra.csproj",
+        "projectUniqueName": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Dominio\\DKP.Dominio.csproj",
+        "projectName": "DKP.Dominio",
+        "projectPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Dominio\\DKP.Dominio.csproj",
         "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\obj\\",
+        "outputPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,87 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\DKP.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\DKP.Infra.csproj",
+        "projectName": "DKP.Infra",
+        "projectPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\DKP.Infra.csproj",
+        "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+        "outputPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Dominio\\DKP.Dominio.csproj": {
+                "projectPath": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.Dominio\\DKP.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.21, )"
+            },
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Dapper.FluentMap": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Dapper.FluentMap.Dommel": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DKP.ViewModel/1.0.0": {
+        "runtime": {
+          "DKP.ViewModel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DKP.ViewModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

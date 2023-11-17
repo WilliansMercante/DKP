@@ -11,10 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\DKP\Controllers\" />
     <Folder Include="Areas\DKP\Data\" />
-    <Folder Include="Areas\DKP\Models\" />
-    <Folder Include="Areas\DKP\Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DKP.ViewModel\DKP.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>
