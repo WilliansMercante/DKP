@@ -4,12 +4,12 @@ namespace DKP.Dominio.DKP.Cadastro.Repository
 {
     public interface ITelefoneRepository
     {
-        void Incluir(TelefoneEntity obj);
-        void Atualizar(TelefoneEntity obj);
-        TelefoneEntity ConsultarPorId(int id);
-        void Excluir(int id);
-        IEnumerable<TelefoneEntity> Listar();
-        IEnumerable<TelefoneEntity> ListarPorCliente(int idCliente);
-        void Inativar(int id);
+        Task InserirAsync(TelefoneEntity obj);
+        Task AtualizarAsync(TelefoneEntity obj);
+        Task<TelefoneEntity> ObterPorIdAsync(int id);
+        Task ExcluirAsync(int id);
+        Task<List<TelefoneEntity>> ListarAsync();
+        Task<List<TelefoneEntity>> ListarPorClienteAsync(int id);
+        public Task InativarAsync(int id);
     }
 }

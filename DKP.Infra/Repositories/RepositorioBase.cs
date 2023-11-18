@@ -9,37 +9,35 @@ namespace DKP.Infra.Repositories
 {
     public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : EntidadeBase, new()
     {
-        public async Task Inserir(TEntity entity)
+        public async Task InserirAsync(TEntity entity)
         {
             using (var connection = DbConnect.Connection)
             {
                 await connection.InsertAsync(entity);
             }
         }
-
-        public async Task Excluir(TEntity entity)
+        public async Task ExcluirAsync(TEntity entity)
         {
             using (var connection = DbConnect.Connection)
             {
                 await connection.DeleteAsync(entity);
             }
         }
-
-        public async Task<List<TEntity>> Buscar(Expression<Func<TEntity, bool>> filter)
+        public async Task<List<TEntity>> BuscarAsync(Expression<Func<TEntity, bool>> filter)
         {
             using (var connection = DbConnect.Connection)
             {
                 return (await connection.GetAllAsync<TEntity>()).Where(filter.Compile()).ToList();
             }
         }
-        public async Task<TEntity> ObterPorId(int id)
+        public async Task<TEntity> ObterPorIdAsync(int id)
         {
             using (var connection = DbConnect.Connection)
             {
                 return (await connection.GetAsync<TEntity>(id));
             }
         }
-        public async Task<List<TEntity>> Listar()
+        public async Task<List<TEntity>> ListarAsync()
         {
             using (var connection = DbConnect.Connection)
             {
@@ -47,7 +45,7 @@ namespace DKP.Infra.Repositories
             }
         }
 
-        public async Task Atualizar(TEntity entity)
+        public async Task AtualizarAsync(TEntity entity)
         {
             using (var connection = DbConnect.Connection)
             {
@@ -55,5 +53,4 @@ namespace DKP.Infra.Repositories
             }
         }
     }
-
 }

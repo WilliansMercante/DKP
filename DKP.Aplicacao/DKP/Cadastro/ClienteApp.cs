@@ -3,6 +3,8 @@
 using DKP.Aplicacao.DKP.Cadastro.Interfaces;
 using DKP.Aplicacao.Mapping;
 using DKP.Dominio.DKP.Cadastro.Entidades;
+using DKP.Dominio.DKP.Cadastro.Repository;
+using DKP.Dominio.Helpers;
 using DKP.ViewModel.DKP;
 
 namespace DKP.Aplicacao.DKP.Cadastro
@@ -11,35 +13,30 @@ namespace DKP.Aplicacao.DKP.Cadastro
     {
         private readonly IClienteRepository _ClienteRepository;
         private readonly IMapper _mapper = MapperConfig.RegisterMappers();
-        private readonly IUnitOfWork<ProjetoPousadaContext> _unitOfWork;
         public ClienteApp
         (
-            IClienteRepository clienteRepository,
-            IUnitOfWork<ProjetoPousadaContext> unitOfWork
+            IClienteRepository clienteRepository
         )
         {
             _ClienteRepository = clienteRepository;
-            _unitOfWork = unitOfWork;
         }
 
         public void Atualizar(ClienteViewModel oClienteViewModel)
         {
             var oClienteEntity = _mapper.Map<ClienteEntity>(oClienteViewModel);
-            _ClienteRepository.Atualizar(oClienteEntity);
-            _unitOfWork.Commit();
+            _ClienteRepository.AtualizarAsync(oClienteEntity);
         }
 
         public ClienteViewModel ConsultarPorId(int id)
         {
-            var oClienteEntity = _ClienteRepository.ConsultarPorId(id);
+            var oClienteEntity = _ClienteRepository.ObterPorIdAsync(id);
             var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity);
             return oClienteViewModel;
         }
 
         public void Inativar(int id)
         {
-            _ClienteRepository.Inativar(id);
-            _unitOfWork.Commit();
+            _ClienteRepository.InativarAsync(id);
         }
 
         public int Incluir(ClienteViewModel clienteVM)
@@ -50,8 +47,7 @@ namespace DKP.Aplicacao.DKP.Cadastro
             var oClienteEntity = _mapper.Map<ClienteEntity>(clienteVM);
             oClienteEntity.DtCadastro = DateTime.Now;
             oClienteEntity.FlAtivo = true;
-            _ClienteRepository.Incluir(oClienteEntity);
-            _unitOfWork.Commit();
+            _ClienteRepository.InserirAsync(oClienteEntity);
             return oClienteEntity.Id;
         }
 

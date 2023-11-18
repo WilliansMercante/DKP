@@ -4,12 +4,12 @@ namespace DKP.Dominio.DKP.Cadastro.Repository
 {
     public interface IEnderecoRepository
     {
-        void Incluir(EnderecoEntity obj);
-        void Atualizar(EnderecoEntity obj);
-        EnderecoEntity ConsultarPorId(int id);
-        void Excluir(int id);
-        IEnumerable<EnderecoEntity> Listar();
-        IEnumerable<EnderecoEntity> ListarPorCliente(int IdCliente);
-        public void Inativar(int id);
+        Task InserirAsync(EnderecoEntity obj);
+        Task AtualizarAsync(EnderecoEntity obj);
+        Task<EnderecoEntity> ObterPorIdAsync(int id);
+        Task ExcluirAsync(int id);
+        Task<List<EnderecoEntity>> ListarAsync();
+        Task<List<EnderecoEntity>> ListarPorClienteAsync(int id);
+        public Task InativarAsync(int id);
     }
 }

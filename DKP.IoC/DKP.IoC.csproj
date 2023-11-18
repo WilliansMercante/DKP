@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DKP.Aplicacao\DKP.Aplicacao.csproj" />
+    <ProjectReference Include="..\DKP.Infra\DKP.Infra.csproj" />
   </ItemGroup>
 
 </Project>

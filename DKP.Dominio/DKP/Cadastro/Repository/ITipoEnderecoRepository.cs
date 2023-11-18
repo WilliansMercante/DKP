@@ -4,6 +4,6 @@ namespace DKP.Dominio.DKP.Cadastro.Repository
 {
     public interface ITipoEnderecoRepository
     {
-        IEnumerable<TipoEnderecoEntity> Listar();
+        Task<List<TipoEnderecoEntity>> ListarAsync();
     }
 }

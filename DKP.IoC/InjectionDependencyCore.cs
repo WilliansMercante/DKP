@@ -1,5 +1,7 @@
 ﻿using DKP.Aplicacao.DKP.Cadastro;
 using DKP.Aplicacao.DKP.Cadastro.Interfaces;
+using DKP.Dominio.DKP.Cadastro.Repository;
+using DKP.Infra.Repositories.DKP.Cadastro;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -32,20 +34,7 @@ namespace DKP.IoC
 
         private static void AddRepositories(IServiceCollection services)
         {
-            #region Configuracao
-
-            services.AddScoped<IMenuItemRepository, MenuItemRepository>();
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-
-            #endregion
-
-            #region Mensagem
-
-            services.AddScoped<IUnitOfWork<ConfiguracaoContext>, UnitOfWork<ConfiguracaoContext>>();
-
-            #endregion
-
-
+  
             #region Cadastro
 
             services.AddScoped<IClienteRepository, ClienteRepository>();

@@ -4,6 +4,6 @@ namespace DKP.Dominio.DKP.Cadastro.Repository
 {
     public interface ITipoTelefoneRepository
     {
-        IEnumerable<TipoTelefoneEntity> Listar();
+        Task<List<TipoTelefoneEntity>> ListarAsync();
     }
 }
