@@ -62,14 +62,14 @@ namespace DKP.Aplicacao.DKP.Cadastro
             var lstClienteEntity = await _ClienteRepository.ListarUltimos20AtivosAsync();
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
-        }     
+        }
 
-        //public IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime? dtNascimento)
-        //{
-        //    var lstClienteEntity = _ClienteRepository.buscar(nome, cpf, dtNascimento);
-        //    var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
-        //    return lstClienteViewModel;
-        //}
+        public async Task<IEnumerable<ClienteViewModel>> Consultar(string nome, string cpf, DateTime? dtNascimento)
+        {
+            var lstClienteEntity = await _ClienteRepository.Consultar(nome, cpf, dtNascimento);
+            var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
+            return lstClienteViewModel;
+        }
 
         public async Task<ClienteViewModel> ConsultarPorCPF(string cpf)
         {

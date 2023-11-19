@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\jqueryMask\\jquery.mask.min.js"
     },
     {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\moment\\moment.min.js",
+      "PackagePath": "staticwebassets\\assets\\moment\\moment.min.js"
+    },
+    {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

@@ -10,9 +10,11 @@
 
         let dados = { nome: nome, cpf: cpf, dtNascimento: dtNascimento }
 
-        requisicao("/Cliente/Cliente/Pesquisar/", "GET", dados)
+        requisicao("/DKP/Cliente/Pesquisar/", "GET", dados)
 
             .done(function (retorno) {
+
+                console.log(retorno);
 
                 if (retorno.flSucesso) {
 
@@ -51,7 +53,6 @@
             novaLinha.append($('<td>').text(moment(cliente.dtNascimento).format("DD/MM/YYYY")));
             novaLinha.append($('<td>').text(cliente.cpf.substring(0, 3) + "." + cliente.cpf.substring(3, 6) + "." + cliente.cpf.substring(6, 9) + "-" + cliente.cpf.substring(9, 11)));
             novaLinha.append($('<td>').text(cliente.rg ? cliente.rg : ''));
-            novaLinha.append($('<td>').text(cliente.sexo.sexo));
             novaLinha.append($(cliente.flAtivo ? '<td class="text-center" style="color: blue;"  title="Ativo"> <i class="text-center" data-feather="thumbs-up" ></i> <span class="text-center"></span></td>' : '<td class="text-center" style="color: red;" title="Inativo"> <i class="text-center" data-feather="thumbs-down"></i> <span class="text-center"></span></td>'));
             novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY HH:mm:ss")));
             novaLinha.append($('<td>').html('<a style="width:40px; height:40px" class="editar btn btn-warning bd-placeholder-img rounded-circle" title="Editar" href="/Cliente/Cliente/Editar/' + cliente.id + '"><i style="margin-top: 2px; margin-left: -1px;" class="align-middle me-2" data-feather="edit"></i></a>'));

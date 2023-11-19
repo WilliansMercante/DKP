@@ -52,13 +52,13 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         }
 
         [HttpGet]
-        [Route("Pesquisar")]
-        public JsonResult Pesquisar(string nome, string cpf, DateTime? dtNascimento)
+        //[Route("Pesquisar")]
+        public async Task<JsonResult> Pesquisar(string nome, string cpf, DateTime? dtNascimento)
         {
 
             try
             {
-                var lstClientesVM = _clienteApp.Consultar(nome, cpf, dtNascimento);
+                var lstClientesVM = await _clienteApp.Consultar(nome, cpf, dtNascimento);
                 return Json(new { flSucesso = true, lstClientes = lstClientesVM });
             }
             catch (Exception ex)

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KtSeqf2zY8hPFQLTb4J3sYkAEVWCYorDcOZKSJ2nqFk=",
+  "Hash": "R0Mxs5kEU6wM1JIASDP/m4XHh4tH6fonObM5DSgl/Eo=",
   "Source": "DKP.UI.Web",
   "BasePath": "_content/DKP.UI.Web",
   "Mode": "Default",
@@ -814,6 +814,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\jqueryMask\\jquery.mask.min.js"
+    },
+    {
+      "Identity": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\moment\\moment.min.js",
+      "SourceId": "DKP.UI.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\",
+      "BasePath": "_content/DKP.UI.Web",
+      "RelativePath": "assets/moment/moment.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\moment\\moment.min.js"
     },
     {
       "Identity": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\favicon.ico",
