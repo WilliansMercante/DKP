@@ -7,11 +7,11 @@ namespace DKP.Aplicacao.DKP.Cadastro.Interfaces
         int Incluir(ClienteViewModel obj);
         void Atualizar(ClienteViewModel obj);
         ClienteViewModel ConsultarPorId(int id);
-        ClienteViewModel ConsultarPorCPF(string cpf);
+        Task<ClienteViewModel> ConsultarPorCPF(string cpf);
         IEnumerable<ClienteViewModel> Listar();
-        IEnumerable<ClienteViewModel> ListarUltimos20Ativos();
-        IEnumerable<ClienteViewModel> ListarUltimos20();
-        IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime? dtNascimento);
+        Task<IEnumerable<ClienteViewModel>> ListarUltimos20Ativos();
+        Task<IEnumerable<ClienteViewModel>> Consultar(string nome, string cpf, DateTime? dtNascimento);
         void Inativar(int id);
+
     }
 }

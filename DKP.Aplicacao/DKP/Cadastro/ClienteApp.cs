@@ -53,34 +53,27 @@ namespace DKP.Aplicacao.DKP.Cadastro
 
         public IEnumerable<ClienteViewModel> Listar()
         {
-            var lstClienteEntity = _ClienteRepository.Listar();
+            var lstClienteEntity = _ClienteRepository.ListarAsync();
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
         }
-        public IEnumerable<ClienteViewModel> ListarUltimos20Ativos()
+        public async Task<IEnumerable<ClienteViewModel>> ListarUltimos20Ativos()
         {
-            var lstClienteEntity = _ClienteRepository.ListarUltimos20Ativos();
+            var lstClienteEntity = await _ClienteRepository.ListarUltimos20AtivosAsync();
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
-        }
+        }     
 
-        public IEnumerable<ClienteViewModel> ListarUltimos20()
-        {
-            var lstClienteEntity = _ClienteRepository.ListarUltimos20();
-            var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
-            return lstClienteViewModel;
-        }
+        //public IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime? dtNascimento)
+        //{
+        //    var lstClienteEntity = _ClienteRepository.buscar(nome, cpf, dtNascimento);
+        //    var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
+        //    return lstClienteViewModel;
+        //}
 
-        public IEnumerable<ClienteViewModel> Consultar(string nome, string cpf, DateTime? dtNascimento)
+        public async Task<ClienteViewModel> ConsultarPorCPF(string cpf)
         {
-            var lstClienteEntity = _ClienteRepository.Consultar(nome, cpf, dtNascimento);
-            var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
-            return lstClienteViewModel;
-        }
-
-        public ClienteViewModel ConsultarPorCPF(string cpf)
-        {
-            var oClienteEntity = _ClienteRepository.ConsultarPorCPF(cpf);
+            var oClienteEntity = await _ClienteRepository.BuscarAsync(p => p.CPF.Equals(cpf));
             var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity);
             return oClienteViewModel;
         }

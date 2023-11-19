@@ -1,0 +1,15 @@
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\bin\Debug\net7.0\DKP.Infra.deps.json
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\bin\Debug\net7.0\DKP.Infra.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\bin\Debug\net7.0\DKP.Infra.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\bin\Debug\net7.0\DKP.Dominio.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\bin\Debug\net7.0\DKP.Dominio.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.csproj.AssemblyReference.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.AssemblyInfoInputs.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.AssemblyInfo.cs
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.csproj.CoreCompileInputs.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.csproj.CopyComplete
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\refint\DKP.Infra.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\ref\DKP.Infra.dll

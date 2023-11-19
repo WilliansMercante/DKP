@@ -1,0 +1,17 @@
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.csproj.AssemblyReference.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.AssemblyInfoInputs.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.AssemblyInfo.cs
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.csproj.CoreCompileInputs.cache
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\bin\Debug\net7.0\DKP.Aplicacao.deps.json
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\bin\Debug\net7.0\DKP.Aplicacao.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\bin\Debug\net7.0\DKP.Aplicacao.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\bin\Debug\net7.0\DKP.Dominio.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\bin\Debug\net7.0\DKP.ViewModel.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\bin\Debug\net7.0\DKP.Dominio.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\bin\Debug\net7.0\DKP.ViewModel.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.csproj.CopyComplete
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\refint\DKP.Aplicacao.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.pdb
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\ref\DKP.Aplicacao.dll

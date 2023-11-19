@@ -13,6 +13,54 @@
       "PackagePath": "staticwebassets\\assets\\css\\app.css.map"
     },
     {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap4.1.3\\bootstrap.min.css.map"
+    },
+    {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\css\\custom\\dkp\\cliente\\cadastro.css",
       "PackagePath": "staticwebassets\\assets\\css\\custom\\dkp\\cliente\\cadastro.css"
     },
@@ -69,6 +117,38 @@
       "PackagePath": "staticwebassets\\assets\\js\\app.js.map"
     },
     {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap4.1.3\\bootstrap.min.js.map"
+    },
+    {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\dkp\\cadastro\\cadastro.js",
       "PackagePath": "staticwebassets\\assets\\js\\custom\\dkp\\cadastro\\cadastro.js"
     },
@@ -91,6 +171,18 @@
     {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\utils\\formatacaoCPF.js",
       "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\formatacaoCPF.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\utils\\nuloOuBranco.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\nuloOuBranco.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\custom\\utils\\requisicao.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\utils\\requisicao.js"
+    },
+    {
+      "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\assets\\js\\jqueryMask\\jquery.mask.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jqueryMask\\jquery.mask.min.js"
     },
     {
       "Id": "D:\\Desempregado\\DKP\\DKP.UI.Web\\DKP.UI.Web\\wwwroot\\favicon.ico",

@@ -17,6 +17,11 @@
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
     <title>Teste para DKP</title>
+
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.css.map" />
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.min.css.map" />
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap4.1.3/bootstrap.css" rel="stylesheet" />
     <link href="~/assets/css/app.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -131,10 +136,37 @@
             <main class="content">
                 <div class="container">
                     <main role="main" class="pb-3">
+
+                        @if (TempData["Sucesso"] != null)
+                        {
+                            <partial name="_Sucesso" />
+                        }
+                        @if (TempData["Erro"] != null)
+                        {
+                            <partial name="_Erro" />
+                        }
+                        @if (TempData["Alerta"] != null)
+                        {
+                            <partial name="_Alerta" />
+                        }
+                        @if (TempData["Informacao"] != null)
+                        {
+                            <partial name="_Info" />
+                        }
+
                         @RenderBody()
+
                     </main>
                 </div>
             </main>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="~/assets/js/bootstrap4.1.3/bootstrap.bundle.js"></script>
+            <script src="~/assets/js/bootstrap4.1.3/bootstrap.bundle.min.js"></script>
+            <script src="~/assets/js/bootstrap4.1.3/bootstrap.js"></script>
+            <script src="~/assets/js/bootstrap4.1.3/bootstrap.min.js"></script>
+   
+
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -148,7 +180,7 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <a class="text-muted" href="https://dkp-it.com.br/" target="_blank">Site DKP</a>
-                                </li>                           
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -158,7 +190,8 @@
     </div>
 
     <script src="~/assets/js/app.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/assets/js/custom/utils/requisicao.js"></script>
+    @await RenderSectionAsync("JS", required: false)
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
