@@ -4,6 +4,6 @@ namespace DKP.Aplicacao.DKP.Cadastro.Interfaces
 {
     public interface ITipoEnderecoApp
     {
-        IEnumerable<TipoEnderecoViewModel> Listar();
+        Task<IEnumerable<TipoEnderecoViewModel>> ListarAsync();
     }
 }

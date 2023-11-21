@@ -7,7 +7,7 @@ using DKP.ViewModel.DKP;
 
 namespace DKP.Aplicacao.DKP.Cadastro
 {
-    public sealed class TipoEnderecoApp /*: ITipoEnderecoApp*/
+    public sealed class TipoEnderecoApp : ITipoEnderecoApp
     {
         private readonly ITipoEnderecoRepository _tipoEnderecoRepository;
         private readonly IMapper _mapper = MapperConfig.RegisterMappers();
@@ -21,12 +21,12 @@ namespace DKP.Aplicacao.DKP.Cadastro
 
         }
 
-        //public IEnumerable<TipoEnderecoViewModel> Listar()
-        //{
-        //    var lstTipoEnderecoEntity = _tipoEnderecoRepository.Listar();
-        //    var lstTipoEnderecoViewModel = _mapper.Map<IEnumerable<TipoEnderecoViewModel>>(lstTipoEnderecoEntity);
-        //    return lstTipoEnderecoViewModel;
-        //}
+        public async Task<IEnumerable<TipoEnderecoViewModel>> ListarAsync()
+        {
+            var lstTipoEnderecoEntity = await _tipoEnderecoRepository.ListarAsync();
+            var lstTipoEnderecoViewModel = _mapper.Map<IEnumerable<TipoEnderecoViewModel>>(lstTipoEnderecoEntity);
+            return lstTipoEnderecoViewModel;
+        }
     }
 
 }

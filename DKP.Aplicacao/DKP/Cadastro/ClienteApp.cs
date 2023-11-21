@@ -27,9 +27,9 @@ namespace DKP.Aplicacao.DKP.Cadastro
             _ClienteRepository.AtualizarAsync(oClienteEntity);
         }
 
-        public ClienteViewModel ConsultarPorId(int id)
+        public async Task<ClienteViewModel> ConsultarPorId(int id)
         {
-            var oClienteEntity = _ClienteRepository.ObterPorIdAsync(id);
+            var oClienteEntity = await _ClienteRepository.ObterPorIdAsync(id);
             var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity);
             return oClienteViewModel;
         }
@@ -73,8 +73,8 @@ namespace DKP.Aplicacao.DKP.Cadastro
 
         public async Task<ClienteViewModel> ConsultarPorCPF(string cpf)
         {
-            var oClienteEntity = await _ClienteRepository.BuscarAsync(p => p.CPF.Equals(cpf));
-            var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity);
+            var oClienteEntity = await _ClienteRepository.BuscarCpfQueryAsync(cpf);
+            var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity.FirstOrDefault());
             return oClienteViewModel;
         }
     }

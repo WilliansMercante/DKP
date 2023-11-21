@@ -1,8 +1,11 @@
-﻿using DKP.Aplicacao.DKP.Cadastro.Interfaces;
+﻿using DKP.Aplicacao.DKP.Cadastro;
+using DKP.Aplicacao.DKP.Cadastro.Interfaces;
 using DKP.UI.Web.Areas.DKP.ViewModels;
 using DKP.UI.Web.Controllers;
+using DKP.ViewModel.DKP;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DKP.UI.Web.Areas.DKP.Controllers
 {
@@ -12,25 +15,25 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         private readonly IClienteApp _clienteApp;
         //private readonly ITelefoneApp _telefoneApp;
         //private readonly IEnderecoApp _enderecoApp;
-        //private readonly ITipoTelefoneApp _tipoTelefoneApp;
-        //private readonly ITipoEnderecoApp _tipoEnderecoApp;
+        private readonly ITipoTelefoneApp _tipoTelefoneApp;
+        private readonly ITipoEnderecoApp _tipoEnderecoApp;
 
 
         public ClienteController
         (
-            IClienteApp clienteApp
+            IClienteApp clienteApp,
             //ITelefoneApp telefoneApp,
             //IEnderecoApp enderecoApp,
-            //ITipoTelefoneApp tipoTelefoneApp,
-            //ITipoEnderecoApp tipoEnderecoApp
+            ITipoTelefoneApp tipoTelefoneApp,
+            ITipoEnderecoApp tipoEnderecoApp
 
         )
         {
             _clienteApp = clienteApp;
             //_telefoneApp = telefoneApp;
             //_enderecoApp = enderecoApp;
-            //_tipoTelefoneApp = tipoTelefoneApp;
-            //_tipoEnderecoApp = tipoEnderecoApp;
+            _tipoTelefoneApp = tipoTelefoneApp;
+            _tipoEnderecoApp = tipoEnderecoApp;
         }
 
 
@@ -52,7 +55,6 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         }
 
         [HttpGet]
-        //[Route("Pesquisar")]
         public async Task<JsonResult> Pesquisar(string nome, string cpf, DateTime? dtNascimento)
         {
 
@@ -69,9 +71,36 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
 
 
         [HttpGet]
-        public IActionResult Cadastro()
+        public async Task<IActionResult> Cadastro()
         {
-            return View();
+            CadastroViewModel cadastroVM = new CadastroViewModel();
+
+            try
+            {
+                cadastroVM.LstTiposEndereco = new SelectList(await _tipoEnderecoApp.ListarAsync(), "Id", "Tipo").ToList();
+                cadastroVM.LstTiposTelefone = new SelectList(await _tipoTelefoneApp.ListarAsync(), "Id", "Tipo").ToList();
+            }
+            catch (Exception ex)
+            {
+                ExibirMensagem(ex.Message, TipoMensagem.Erro);
+            }
+
+            return View("Cadastro", cadastroVM);
         }
+
+        [HttpGet]
+        public async Task<JsonResult> PesquisarCPF(string cpf)
+        {
+            try
+            {
+                ClienteViewModel oClienteVM = await _clienteApp.ConsultarPorCPF(cpf);
+                return Json(new { flSucesso = true, oCliente = oClienteVM });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { flSucesso = false, mensagem = ex.Message });
+            }
+        }
+
     }
 }

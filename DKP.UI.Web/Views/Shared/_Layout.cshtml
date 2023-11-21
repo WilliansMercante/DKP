@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="sidebar-item ">
-                        <a class="sidebar-link" href="DKP/Cliente/Index">
+                        <a class="sidebar-link" href="/DKP/Cliente/Index">
                             <i class="align-middle" data-feather="user"></i> <span class="align-middle">Clientes</span>
                         </a>
                     </li>
@@ -134,30 +134,35 @@
             </nav>
 
             <main class="content">
-                <div class="container">
-                    <main role="main" class="pb-3">
-
-                        @if (TempData["Sucesso"] != null)
-                        {
-                            <partial name="_Sucesso" />
-                        }
-                        @if (TempData["Erro"] != null)
-                        {
-                            <partial name="_Erro" />
-                        }
-                        @if (TempData["Alerta"] != null)
-                        {
-                            <partial name="_Alerta" />
-                        }
-                        @if (TempData["Informacao"] != null)
-                        {
-                            <partial name="_Info" />
-                        }
-
-                        @RenderBody()
-
-                    </main>
+                <div id="mensagemAjax">
+                    <div class="row divAlerta">
+                        <div class="col-md-12">
+                            <partial name="_mensagemAjax" />
+                        </div>
+                    </div>
                 </div>
+
+
+                @if (TempData["Sucesso"] != null)
+                {
+                    <partial name="_Sucesso" />
+
+                }
+                @if (TempData["Erro"] != null)
+                {
+                    <partial name="_Erro" />
+                }
+                @if (TempData["Alerta"] != null)
+                {
+                    <partial name="_Alerta" />
+                }
+                @if (TempData["Informacao"] != null)
+                {
+                    <partial name="_Info" />
+                }
+
+                @RenderBody()
+
             </main>
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -192,6 +197,78 @@
     <script src="~/assets/js/app.js"></script>
     <script src="~/assets/js/custom/utils/requisicao.js"></script>
     <script src="~/assets/moment/moment.min.js"></script>
+    <script src="~/assets/js/jquerymask/jquery.mask.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(window).on('load', function () {
+            // Animate loader off screen
+            $(".loading").fadeOut("slow");
+            $('#main-container').addClass("slideUp");
+        });
+
+        $(document).submit(function (event) {
+            $(".loading").fadeIn();
+            $("body").fadeOut("slow")
+        });
+
+        window.addEventListener('load', function () {
+            $(".loading").fadeOut("slow");
+            $('#main-container').addClass("slideUp");
+        });
+
+        $(".logout").off("click").on("click", function () {
+            $(".loading").fadeIn();
+            $("body").fadeOut("slow");
+        });
+
+        const msgAjax = {
+
+            sucesso: function (mensagem) {
+                $("#msgAjax").html(mensagem);
+                $("#ajaxTitulo").html("Sucesso! ");
+                $(".alertaAjax").addClass('alert-success');
+                $("#teste").show();
+                retiraMsgAjax('alert-success');
+            },
+            alerta: function (mensagem) {
+                $("#msgAjax").html(mensagem);
+                $("#ajaxTitulo").html("Atenção! ");
+                $(".alertaAjax").addClass('alert-warning');
+                $("#teste").show();
+                retiraMsgAjax('alert-warning');
+            },
+            erro: function (mensagem) {
+                $("#msgAjax").html(mensagem);
+                $("#ajaxTitulo").html("Erro! ");
+                $(".alertaAjax").addClass('alert-danger');
+                $("#teste").show();
+                retiraMsgAjax('alert-danger');
+            }
+        };
+
+        function retiraMsgAjax(classeARemover) {
+            let fade_out = function () {
+                $("#mensagemAjax").removeClass("pula").addClass("sobe");
+                setTimeout(function () {
+                    will(classeARemover)
+                }, 700);
+
+            }
+            setTimeout(fade_out, 5000);
+        }
+
+        function will(classeARemover) {
+            $("#teste").fadeOut().hide();
+            $("#ajaxTitulo").html("");
+            $("#msgAjax").html("");
+            $(".alertaAjax").removeClass(classeARemover);
+            $("#mensagemAjax").removeClass("sobe");
+        }
+
+    </script>
+
+
     @await RenderSectionAsync("JS", required: false)
 
     <script>

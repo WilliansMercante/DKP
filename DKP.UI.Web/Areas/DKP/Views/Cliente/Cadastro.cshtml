@@ -1,19 +1,19 @@
-﻿@* @model ProjetoPousada.IU.Web.Areas.Cadastro.ViewModels.Cliente.CadastroViewModel *@
+﻿@model DKP.UI.Web.Areas.DKP.ViewModels.CadastroViewModel
 
-@* @{
+@{
     Layout = "_Layout";
-} *@
+}
 
 @section CSS
-    {
-    <link href="~/assets/css/custom/cadastro/cliente/cadastro.css" rel="stylesheet" />
+    {    
+    <link href="~/assets/css/custom/dkp/cliente/cadastro.css" rel="stylesheet" />
 }
 
 @using (@Html.BeginForm("Cadastro", "Cliente", new { area = "Cadastro" }, FormMethod.Post, true, new { id = "frmCadastro" }))
 {
     <div class="row">
 
-        @* @Html.HiddenFor(p => p.Cliente.Id) *@
+        @Html.HiddenFor(p => p.Cliente.Id)
 
         <div class="col-lg-10">
             <h2>Cadastro de Clientes</h2>
@@ -27,7 +27,7 @@
         <div class="col-md-3">
             <div id="divAlertaCPF"></div>
             <label>CPF:<span class="text-danger">*</span></label>
-            @* @Html.TextBoxFor(p => p.Cliente.CPF,new {@class = "form-control",required = "required",maxlength = "11",placeholder = "CPF",minlength = "11"}) *@
+            @Html.TextBoxFor(p => p.Cliente.CPF,new {@class = "form-control",required = "required",maxlength = "11",placeholder = "CPF",minlength = "11"})
         </div>
         <div class="col-md-2" id="divBtnPesquisar">
             <button class="btn btn-success" style="margin-top: 31px;" id="btnPesquisar" type="button">
@@ -37,7 +37,7 @@
         </div>
         <div class="col-md-1" style="display:none;" id="divFlAtivo">
             <label>Ativo?</label>
-            @* @Html.CheckBoxFor(p => p.Cliente.FlAtivo, new { style = "margin-top: 40px;"}) *@
+            @Html.CheckBoxFor(p => p.Cliente.FlAtivo, new { style = "margin-top: 40px;"})
         </div>
     </div>
 
@@ -46,19 +46,15 @@
     <div class="row">
         <div class="col-md-3">
             <label>Nome:<span class="text-danger">*</span></label>
-            @* @Html.TextBoxFor(p => p.Cliente.Nome, new {@class = "form-control readonlyCliente",required = "required",maxlength = "400",placeholder = "Nome"}) *@
+            @Html.TextBoxFor(p => p.Cliente.Nome, new {@class = "form-control readonlyCliente",required = "required",maxlength = "400",placeholder = "Nome"})
         </div>
         <div class="col-md-2">
             <label>Data de Nascimento:<span class="text-danger">*</span></label>
-            @* @Html.TextBoxFor(p => p.Cliente.DtNascimento,"{0:yyyy-MM-dd}", new {@class = "form-control readonlyCliente",required = "required",placeholder = "Data de Nascimento", type="date",max = DateTime.Now.ToString("yyyy-MM-dd")}) *@
-        </div>
-        <div class="col-md-3">
-            <label>Sexo:<span class="text-danger">*</span></label>
-            @* @Html.DropDownListFor(p => p.Cliente.IdSexo, Model.Sexos, " --- Selecione o sexo --- ", new { @class = "form-control readonlyCliente"}) *@
+            @Html.TextBoxFor(p => p.Cliente.DtNascimento,"{0:yyyy-MM-dd}", new {@class = "form-control readonlyCliente",required = "required",placeholder = "Data de Nascimento", type="date",max = DateTime.Now.ToString("yyyy-MM-dd")})
         </div>
         <div class="col-md-2">
             <label>RG:</label>
-            @* @Html.TextBoxFor(p => p.Cliente.Rg, new { @class = "form-control readonlyCliente"}) *@
+            @Html.TextBoxFor(p => p.Cliente.Rg, new { @class = "form-control readonlyCliente"})
         </div>
         <div class="col-md-2" style="display:none;" id="divBtnCadastrar">
             <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrar" type="button">
@@ -90,30 +86,30 @@
                     <div class="row">
                         <div class="col-md-3">
                             <label>Tipo de endereço:<span class="text-danger">*</span></label>
-                            @* @Html.DropDownListFor(p => p.TipoEndereco.Id , Model.LstTiposEndereco, " --- Selecione o tipo de endereço --- ", new { @class = "form-control readonlyEndereco",required = "required"}) *@
+                            @Html.DropDownListFor(p => p.TipoEndereco.Id , Model.LstTiposEndereco, " --- Selecione o tipo de endereço --- ", new { @class = "form-control readonlyEndereco",required = "required"})
                         </div>
                     </div>
                     <br />
                     <div class="row">
                         <div class="col-md-2">
                             <label>CEP:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Endereco.Cep,new {@class = "form-control readonlyEndereco",maxlength = "8",placeholder = "CEP",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Endereco.Cep,new {@class = "form-control readonlyEndereco",maxlength = "8",placeholder = "CEP",required = "required"})
                         </div>
                         <div class="col-md-3">
                             <label>Rua:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Endereco.Rua,new {@class = "form-control readonlyEndereco",placeholder = "Rua",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Endereco.Rua,new {@class = "form-control readonlyEndereco",placeholder = "Rua",required = "required"})
                         </div>
                         <div class="col-md-1">
                             <label>Número:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Endereco.Numero, new { @class = "form-control readonlyEndereco",maxlength = "20",placeholder = "Número",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Endereco.Numero, new { @class = "form-control readonlyEndereco",maxlength = "20",placeholder = "Número",required = "required"})
                         </div>
                         <div class="col-md-3">
                             <label>Complemento:</label>
-                            @* @Html.TextBoxFor(p => p.Endereco.Complemento,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Complemento"}) *@
+                            @Html.TextBoxFor(p => p.Endereco.Complemento,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Complemento"})
                         </div>
                         <div class="col-md-3">
                             <label>Bairro:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Endereco.Bairro,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "Bairro",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Endereco.Bairro,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "Bairro",required = "required"})
                         </div>
                     </div>
                     <br />
@@ -121,11 +117,11 @@
                     <div class="row">
                         <div class="col-md-3">
                             <label>Município:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Endereco.Municipio,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Município",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Endereco.Municipio,  new { @class = "form-control readonlyEndereco",maxlength = "200",placeholder = "Município",required = "required"})
                         </div>
                         <div class="col-md-1">
                             <label>UF:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Endereco.UF,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "UF",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Endereco.UF,  new { @class = "form-control readonlyEndereco",maxlength = "400",placeholder = "UF",required = "required"})
                         </div>
                         <div class="col-md-1" style="display:none;" id="divBtnCadastrarEndereco">
                             <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarEndereco" type="button">
@@ -174,18 +170,18 @@
                     <div class="row">
                         <div class="col-md-3">
                             <label>Tipo de telefone:<span class="text-danger">*</span></label>
-                            @* @Html.DropDownListFor(p => p.TipoTelefone.Id , Model.LstTiposTelefone, " --- Selecione o tipo de telefone --- ", new { @class = "form-control readonlyTelefone",required = "required"}) *@
+                            @Html.DropDownListFor(p => p.TipoTelefone.Id , Model.LstTiposTelefone, " --- Selecione o tipo de telefone --- ", new { @class = "form-control readonlyTelefone",required = "required"})
                         </div>
                     </div>
                     <br />
                     <div class="row">
                         <div class="col-md-1">
                             <label>DDD:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Telefone.DDD,new {@class = "form-control readonlyTelefone",maxlength = "2",placeholder = "DDD",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Telefone.DDD,new {@class = "form-control readonlyTelefone",maxlength = "2",placeholder = "DDD",required = "required"})
                         </div>
                         <div class="col-md-3">
                             <label>Número:<span class="text-danger">*</span></label>
-                            @* @Html.TextBoxFor(p => p.Telefone.Numero,new {@class = "form-control readonlyTelefone",placeholder = "Número",required = "required"}) *@
+                            @Html.TextBoxFor(p => p.Telefone.Numero,new {@class = "form-control readonlyTelefone",placeholder = "Número",required = "required"})
                         </div>
                         <div class="col-md-1" style="display:none;" id="divBtnCadastrarTelefone">
                             <button class="btn btn-success" style="margin-top: 31px;" id="btnCadastrarTelefone" type="button">
@@ -220,7 +216,7 @@
     {
     <script src="~/assets/js/custom/utils/formatacaocpf.js"></script>
     <script src="~/assets/js/custom/utils/validacaocpf.js"></script>
-    <script src="~/assets/js/custom/cadastro/enums/enumTipoEndereco.js"></script>
-    <script src="~/assets/js/custom/cadastro/enums/enumTipoTelefone.js"></script>
-    <script src="~/assets/js/custom/cadastro/cadastro/cadastro.js"></script>
+    <script src="~/assets/js/custom/dkp/cadastro/enums/enumtipoendereco.js"></script>
+    <script src="~/assets/js/custom/dkp/cadastro/enums/enumtipotelefone.js"></script>
+    <script src="~/assets/js/custom/dkp/cadastro/cadastro.js"></script>
     }

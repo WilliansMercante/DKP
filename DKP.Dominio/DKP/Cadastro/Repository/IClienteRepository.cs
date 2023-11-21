@@ -16,5 +16,6 @@ namespace DKP.Dominio.DKP.Cadastro.Repository
 
         Task<IEnumerable<ClienteEntity>> Consultar(string nome, string cpf, DateTime? dtNascimento);
         Task<List<ClienteEntity>> BuscarAsync(Expression<Func<ClienteEntity, bool>> filter);
+        Task<List<ClienteEntity>> BuscarCpfQueryAsync(string cpf );
     }
 }

@@ -12,11 +12,11 @@
         $("#divBtnCadastrar").show();
         $("#divFlAtivo").show();
 
-        let cpfLimpo = limparCPF(cpfSemFormatacao);
+        let cpf = limparCPF(cpfSemFormatacao);
 
-        if (verificaCPF(cpfLimpo)) {
+        if (verificaCPF(cpf)) {
 
-            requisicao("/Cliente/Cliente/PesquisarCPF/" + cpfLimpo, "GET")
+            requisicao("/DKP/Cliente/PesquisarCPF/" + cpf, "GET")
 
                 .done(function (retorno) {
 
@@ -114,11 +114,12 @@
 
         if (cpfSemFormatacao != '') {
 
-            let cpfLimpo = limparCPF(cpfSemFormatacao);
+            let cpf = limparCPF(cpfSemFormatacao);
+            let dados = { cpf: cpf }
 
-            if (verificaCPF(cpfLimpo)) {
+            if (verificaCPF(cpf)) {
 
-                requisicao("/Cliente/Cliente/PesquisarCPF/" + cpfLimpo, "GET")
+                requisicao("/DKP/Cliente/PesquisarCPF/", "GET", dados)
 
                     .done(function (retorno) {
 
@@ -217,7 +218,7 @@
 
         if (cpfLimpo != '' && nome != '' && dtNascimento != '' && idSexo != '') {
 
-            requisicao("/Cliente/Cliente/Cadastro", "POST", dados).done(function (retorno) {
+            requisicao("/DKP/Cliente/Cadastro", "POST", dados).done(function (retorno) {
 
                 if (retorno.flSucesso) {
 

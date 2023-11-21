@@ -64,5 +64,24 @@ namespace DKP.Infra.Repositories.DKP.Cadastro
                 return resultados;
             }
         }
+
+        public async Task<List<ClienteEntity>> BuscarCpfQueryAsync(string cpf)
+        {
+            using (var connection = DbConnect.Connection)
+            {
+
+                string query = "SELECT * FROM DKP.cadastro.TB_CLIENTE WHERE 1 = 1";
+
+          
+                if (!string.IsNullOrEmpty(cpf))
+                {
+                    query += " AND NR_CPF = @CPF";               }
+
+                var parametros = new { CPF = cpf };
+                var resultados = connection.Query<ClienteEntity>(query, parametros);
+
+                return resultados.ToList();
+            }
+        }
     }
 }

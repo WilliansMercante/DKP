@@ -6,7 +6,7 @@ namespace DKP.Aplicacao.DKP.Cadastro.Interfaces
     {
         int Incluir(ClienteViewModel obj);
         void Atualizar(ClienteViewModel obj);
-        ClienteViewModel ConsultarPorId(int id);
+        Task<ClienteViewModel> ConsultarPorId(int id);
         Task<ClienteViewModel> ConsultarPorCPF(string cpf);
         IEnumerable<ClienteViewModel> Listar();
         Task<IEnumerable<ClienteViewModel>> ListarUltimos20Ativos();

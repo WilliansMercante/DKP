@@ -20,8 +20,8 @@ namespace DKP.IoC
             services.AddScoped<IClienteApp, ClienteApp>();
             //services.AddScoped<IEnderecoApp, EnderecoApp>();
             //services.AddScoped<ITelefoneApp, TelefoneApp>();
-            //services.AddScoped<ITipoTelefoneApp, TipoTelefoneApp>();
-            //services.AddScoped<ITipoEnderecoApp, TipoEnderecoApp>();
+            services.AddScoped<ITipoTelefoneApp, TipoTelefoneApp>();
+            services.AddScoped<ITipoEnderecoApp, TipoEnderecoApp>();
         }
 
 
@@ -35,8 +35,8 @@ namespace DKP.IoC
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             //services.AddScoped<ITelefoneRepository, TelefoneRepository>();
             //services.AddScoped<ISexoRepository, SexoRepository>();
-            //services.AddScoped<ITipoTelefoneRepository, TipoTelefoneRepository>();
-            //services.AddScoped<ITipoEnderecoRepository, TipoEnderecoRepository>();
+            services.AddScoped<ITipoTelefoneRepository, TipoTelefoneRepository>();
+            services.AddScoped<ITipoEnderecoRepository, TipoEnderecoRepository>();
 
             #endregion
 
