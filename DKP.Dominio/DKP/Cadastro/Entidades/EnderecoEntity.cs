@@ -14,7 +14,6 @@
         public DateTime DtCadastro { get; set; }
         public bool FlAtivo { get; set; }
 
-        public TipoEnderecoEntity TipoEndereco { get; set; }
 
     }
 }
