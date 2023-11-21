@@ -9,3 +9,4 @@ D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\refint\DKP.ViewModel.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.pdb
 D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\ref\DKP.ViewModel.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.ViewModel\obj\Debug\net7.0\DKP.ViewModel.sourcelink.json

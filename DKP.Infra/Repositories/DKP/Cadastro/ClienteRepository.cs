@@ -32,7 +32,7 @@ namespace DKP.Infra.Repositories.DKP.Cadastro
             }
         }
 
-        public async Task<IEnumerable<ClienteEntity>> Consultar(string nome, string cpf, DateTime? dtNascimento)
+        public async Task<IEnumerable<ClienteEntity>> ConsultarAsync(string nome, string cpf, DateTime? dtNascimento)
         {           
 
             using (var connection = DbConnect.Connection)

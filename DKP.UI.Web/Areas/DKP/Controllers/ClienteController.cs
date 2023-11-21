@@ -1,5 +1,6 @@
 ﻿using DKP.Aplicacao.DKP.Cadastro;
 using DKP.Aplicacao.DKP.Cadastro.Interfaces;
+using DKP.Dominio.Helpers;
 using DKP.UI.Web.Areas.DKP.ViewModels;
 using DKP.UI.Web.Controllers;
 using DKP.ViewModel.DKP;
@@ -13,8 +14,8 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
     public class ClienteController : BaseController
     {
         private readonly IClienteApp _clienteApp;
-        //private readonly ITelefoneApp _telefoneApp;
-        //private readonly IEnderecoApp _enderecoApp;
+        private readonly ITelefoneApp _telefoneApp;
+        private readonly IEnderecoApp _enderecoApp;
         private readonly ITipoTelefoneApp _tipoTelefoneApp;
         private readonly ITipoEnderecoApp _tipoEnderecoApp;
 
@@ -22,16 +23,16 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         public ClienteController
         (
             IClienteApp clienteApp,
-            //ITelefoneApp telefoneApp,
-            //IEnderecoApp enderecoApp,
+            ITelefoneApp telefoneApp,
+            IEnderecoApp enderecoApp,
             ITipoTelefoneApp tipoTelefoneApp,
             ITipoEnderecoApp tipoEnderecoApp
 
         )
         {
             _clienteApp = clienteApp;
-            //_telefoneApp = telefoneApp;
-            //_enderecoApp = enderecoApp;
+            _telefoneApp = telefoneApp;
+            _enderecoApp = enderecoApp;
             _tipoTelefoneApp = tipoTelefoneApp;
             _tipoEnderecoApp = tipoEnderecoApp;
         }
@@ -44,7 +45,7 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
 
             try
             {
-                indexVM.Clientes = await _clienteApp.ListarUltimos20Ativos();
+                indexVM.Clientes = await _clienteApp.ListarUltimos20AtivosAsync();
             }
             catch (Exception ex)
             {
@@ -93,7 +94,7 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         {
             try
             {
-                ClienteViewModel oClienteVM = await _clienteApp.ConsultarPorCPF(cpf);
+                ClienteViewModel oClienteVM = await _clienteApp.BuscarPorCPFAsync(cpf);
                 return Json(new { flSucesso = true, oCliente = oClienteVM });
             }
             catch (Exception ex)
@@ -102,5 +103,31 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
             }
         }
 
+        [Route("Cadastro")]
+        [HttpPost]
+        public async Task<JsonResult> Cadastro(ClienteViewModel clienteVM)
+        {
+
+            try
+            {
+
+                if (clienteVM.Id > 0)
+                {
+                    await _clienteApp.AtualizarAsync(clienteVM);
+                    return Json(new { FlSucesso = true, Mensagem = "Dados alterados com sucesso!", IdCliente = clienteVM.Id, FlEditar = true });
+                }
+
+                else
+                {
+                    clienteVM.Id = await _clienteApp.InserirAsync(clienteVM);
+                    return Json(new { FlSucesso = true, Mensagem = "Dados inseridos com sucesso, por favor continue o cadastro!", IdCliente = clienteVM.Id, FlEditar = false });
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return Json(new { FlSucesso = false, Mensagem = ex.Message });
+            }
+        } 
     }
 }

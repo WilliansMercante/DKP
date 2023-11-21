@@ -22,6 +22,7 @@ namespace DKP.Aplicacao.Mapping
             cfg.CreateMap<TelefoneEntity, TelefoneViewModel>().ReverseMap();
             cfg.CreateMap<TipoEnderecoEntity, TipoEnderecoViewModel>().ReverseMap();
             cfg.CreateMap<TipoTelefoneEntity, TipoTelefoneViewModel>().ReverseMap();
+            cfg.CreateMap<EnderecoEntity, EnderecoViewModel>().ReverseMap();
         }
     }
 }

@@ -21,25 +21,25 @@ namespace DKP.Aplicacao.DKP.Cadastro
             _ClienteRepository = clienteRepository;
         }
 
-        public void Atualizar(ClienteViewModel oClienteViewModel)
+        public async Task AtualizarAsync(ClienteViewModel oClienteViewModel)
         {
             var oClienteEntity = _mapper.Map<ClienteEntity>(oClienteViewModel);
-            _ClienteRepository.AtualizarAsync(oClienteEntity);
+            await _ClienteRepository.AtualizarAsync(oClienteEntity);
         }
 
-        public async Task<ClienteViewModel> ConsultarPorId(int id)
+        public async Task<ClienteViewModel> ObterPorIdAsync(int id)
         {
             var oClienteEntity = await _ClienteRepository.ObterPorIdAsync(id);
             var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity);
             return oClienteViewModel;
         }
 
-        public void Inativar(int id)
+        public async Task InativarAsync(int id)
         {
-            _ClienteRepository.InativarAsync(id);
+            await _ClienteRepository.InativarAsync(id);
         }
 
-        public int Incluir(ClienteViewModel clienteVM)
+        public async Task<int> InserirAsync(ClienteViewModel clienteVM)
         {
             clienteVM.CPF = RetiraCaracterHelper.RetiraCaracteres(clienteVM.CPF);
             ExcecaoDominioHelper.Validar(!VerificaCPFHelper.ValidaCPF(clienteVM.CPF), "CPF Inválido!");
@@ -47,17 +47,17 @@ namespace DKP.Aplicacao.DKP.Cadastro
             var oClienteEntity = _mapper.Map<ClienteEntity>(clienteVM);
             oClienteEntity.DtCadastro = DateTime.Now;
             oClienteEntity.FlAtivo = true;
-            _ClienteRepository.InserirAsync(oClienteEntity);
+            await _ClienteRepository.InserirAsync(oClienteEntity);
             return oClienteEntity.Id;
         }
 
-        public IEnumerable<ClienteViewModel> Listar()
+        public async Task<IEnumerable<ClienteViewModel>> ListarAsync()
         {
-            var lstClienteEntity = _ClienteRepository.ListarAsync();
+            var lstClienteEntity = await _ClienteRepository.ListarAsync();
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
         }
-        public async Task<IEnumerable<ClienteViewModel>> ListarUltimos20Ativos()
+        public async Task<IEnumerable<ClienteViewModel>> ListarUltimos20AtivosAsync()
         {
             var lstClienteEntity = await _ClienteRepository.ListarUltimos20AtivosAsync();
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
@@ -66,12 +66,12 @@ namespace DKP.Aplicacao.DKP.Cadastro
 
         public async Task<IEnumerable<ClienteViewModel>> Consultar(string nome, string cpf, DateTime? dtNascimento)
         {
-            var lstClienteEntity = await _ClienteRepository.Consultar(nome, cpf, dtNascimento);
+            var lstClienteEntity = await _ClienteRepository.ConsultarAsync(nome, cpf, dtNascimento);
             var lstClienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(lstClienteEntity);
             return lstClienteViewModel;
         }
 
-        public async Task<ClienteViewModel> ConsultarPorCPF(string cpf)
+        public async Task<ClienteViewModel> BuscarPorCPFAsync(string cpf)
         {
             var oClienteEntity = await _ClienteRepository.BuscarCpfQueryAsync(cpf);
             var oClienteViewModel = _mapper.Map<ClienteViewModel>(oClienteEntity.FirstOrDefault());

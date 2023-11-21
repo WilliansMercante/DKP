@@ -9,3 +9,4 @@ D:\Desempregado\DKP\DKP.UI.Web\DKP.Dominio\obj\Debug\net7.0\DKP.Dominio.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Dominio\obj\Debug\net7.0\refint\DKP.Dominio.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Dominio\obj\Debug\net7.0\DKP.Dominio.pdb
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Dominio\obj\Debug\net7.0\ref\DKP.Dominio.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Dominio\obj\Debug\net7.0\DKP.Dominio.sourcelink.json

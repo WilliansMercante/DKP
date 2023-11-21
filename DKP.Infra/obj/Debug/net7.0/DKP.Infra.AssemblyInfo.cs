@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DKP.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d3fc14cfa28b0666b2541bc1f6b09c06946820b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DKP.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DKP.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

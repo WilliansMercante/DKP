@@ -20,10 +20,10 @@ namespace DKP.Aplicacao.DKP.Cadastro
             _enderecoRepository = enderecoRepository;
         }
 
-        public async Task Atualizar(EnderecoViewModel oEnderecoViewModel)
+        public async Task AtualizarAsync(EnderecoViewModel oEnderecoViewModel)
         {
             var oEnderecoEntity = _mapper.Map<EnderecoEntity>(oEnderecoViewModel);
-           await _enderecoRepository.AtualizarAsync(oEnderecoEntity);
+            await _enderecoRepository.AtualizarAsync(oEnderecoEntity);
         }
 
         public async Task<EnderecoViewModel> ConsultarPorId(int id)
@@ -33,29 +33,29 @@ namespace DKP.Aplicacao.DKP.Cadastro
             return oEnderecoViewModel;
         }
 
-        public void Inativar(int id)
+        public async Task Inativar(int id)
         {
-            _enderecoRepository.InativarAsync(id);
+            await _enderecoRepository.InativarAsync(id);
         }
 
-        public void Incluir(EnderecoViewModel oEnderecoViewModel)
+        public async Task IncluirAsync(EnderecoViewModel oEnderecoViewModel)
         {
             oEnderecoViewModel.FlAtivo = true;
             var oEnderecoEntity = _mapper.Map<EnderecoEntity>(oEnderecoViewModel);
             oEnderecoEntity.DtCadastro = DateTime.Now;
-            _enderecoRepository.Incluir(oEnderecoEntity);
+            await _enderecoRepository.InserirAsync(oEnderecoEntity);
         }
 
-        public IEnumerable<EnderecoViewModel> Listar()
+        public async Task<IEnumerable<EnderecoViewModel>> Listar()
         {
-            var lstEnderecoEntity = _enderecoRepository.Listar();
+            var lstEnderecoEntity = await _enderecoRepository.ListarAsync();
             var lstEnderecoViewModel = _mapper.Map<IEnumerable<EnderecoViewModel>>(lstEnderecoEntity);
             return lstEnderecoViewModel;
         }
 
-        public IEnumerable<EnderecoViewModel> ListarPorCliente(int IdCliente)
+        public async Task<IEnumerable<EnderecoViewModel>> ListarPorCliente(int IdCliente)
         {
-            var lstEnderecoEntity = _enderecoRepository.ListarPorCliente(IdCliente);
+            var lstEnderecoEntity = await _enderecoRepository.ListarPorClienteAsync(IdCliente);
             var lstEnderecoViewModel = _mapper.Map<IEnumerable<EnderecoViewModel>>(lstEnderecoEntity);
             return lstEnderecoViewModel;
         }

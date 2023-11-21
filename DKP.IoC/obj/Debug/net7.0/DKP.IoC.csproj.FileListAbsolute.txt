@@ -19,3 +19,4 @@ D:\Desempregado\DKP\DKP.UI.Web\DKP.IoC\obj\Debug\net7.0\DKP.IoC.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.IoC\obj\Debug\net7.0\refint\DKP.IoC.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.IoC\obj\Debug\net7.0\DKP.IoC.pdb
 D:\Desempregado\DKP\DKP.UI.Web\DKP.IoC\obj\Debug\net7.0\ref\DKP.IoC.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.IoC\obj\Debug\net7.0\DKP.IoC.sourcelink.json

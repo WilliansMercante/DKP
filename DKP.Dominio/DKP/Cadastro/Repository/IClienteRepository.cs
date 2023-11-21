@@ -14,7 +14,7 @@ namespace DKP.Dominio.DKP.Cadastro.Repository
         Task<List<ClienteEntity>> ListarAsync();
         Task<List<ClienteEntity>> ListarUltimos20AtivosAsync();
 
-        Task<IEnumerable<ClienteEntity>> Consultar(string nome, string cpf, DateTime? dtNascimento);
+        Task<IEnumerable<ClienteEntity>> ConsultarAsync(string nome, string cpf, DateTime? dtNascimento);
         Task<List<ClienteEntity>> BuscarAsync(Expression<Func<ClienteEntity, bool>> filter);
         Task<List<ClienteEntity>> BuscarCpfQueryAsync(string cpf );
     }

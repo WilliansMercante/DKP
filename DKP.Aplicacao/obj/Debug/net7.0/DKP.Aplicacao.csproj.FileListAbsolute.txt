@@ -15,3 +15,4 @@ D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\refint\DKP.Aplicacao.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.pdb
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\ref\DKP.Aplicacao.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Aplicacao\obj\Debug\net7.0\DKP.Aplicacao.sourcelink.json

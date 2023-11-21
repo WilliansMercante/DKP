@@ -18,29 +18,19 @@ namespace DKP.IoC
         private static void AddApplication(IServiceCollection services)
         {
             services.AddScoped<IClienteApp, ClienteApp>();
-            //services.AddScoped<IEnderecoApp, EnderecoApp>();
-            //services.AddScoped<ITelefoneApp, TelefoneApp>();
+            services.AddScoped<IEnderecoApp, EnderecoApp>();
+            services.AddScoped<ITelefoneApp, TelefoneApp>();
             services.AddScoped<ITipoTelefoneApp, TipoTelefoneApp>();
             services.AddScoped<ITipoEnderecoApp, TipoEnderecoApp>();
         }
 
-
-
         private static void AddRepositories(IServiceCollection services)
         {
-
-            #region Cadastro
-
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
-            //services.AddScoped<ITelefoneRepository, TelefoneRepository>();
-            //services.AddScoped<ISexoRepository, SexoRepository>();
+            services.AddScoped<ITelefoneRepository, TelefoneRepository>();
             services.AddScoped<ITipoTelefoneRepository, TipoTelefoneRepository>();
             services.AddScoped<ITipoEnderecoRepository, TipoEnderecoRepository>();
-
-            #endregion
-
-
         }
     }
 

@@ -384,7 +384,7 @@
 
         let dados = { idCliente: idCliente, idTipoEndereco: idTipoEndereco, cep: cep, rua: rua, numero: numero, complemento: complemento, bairro: bairro, municipio: municipio, uf: uf }
 
-        requisicao("/Cliente/Endereco/Cadastro", "POST", dados).done(function (retorno) {
+        requisicao("/DKP/Endereco/Cadastro", "POST", dados).done(function (retorno) {
 
             if (retorno.flSucesso) {
 
@@ -418,7 +418,8 @@
     }
 
     async function obterEnderecos(idCliente) {
-        return await requisicao("/Cliente/Endereco/ListarPorCliente/" + idCliente, "GET");
+        let dados = { idCliente: idCliente }
+        return await requisicao("/DKP/Endereco/ListarPorCliente/", "GET", dados);
     }
 
     function preencheTbEndereco(destroy, lstEndereco) {
@@ -471,7 +472,7 @@
 
         let dados = { idCliente: idCliente, idTipoTelefone: idTipoTelefone, ddd: ddd, numero: numero }
 
-        requisicao("/Cliente/Telefone/Cadastro", "POST", dados).done(function (retorno) {
+        requisicao("/DKP/Telefone/Cadastro", "POST", dados).done(function (retorno) {
 
             if (retorno.flSucesso) {
 
@@ -511,7 +512,7 @@
     }
 
     async function obterTelefones(idCliente) {
-        return await requisicao("/Cliente/Telefone/ListarPorCliente/" + idCliente, "GET");
+        return await requisicao("/DKP/Telefone/ListarPorCliente/" + idCliente, "GET");
     }
 
 

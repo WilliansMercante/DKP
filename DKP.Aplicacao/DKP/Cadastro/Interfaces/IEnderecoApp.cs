@@ -4,11 +4,11 @@ namespace DKP.Aplicacao.DKP.Cadastro.Interfaces
 {
     public interface IEnderecoApp
     {
-        void Incluir(EnderecoViewModel obj);
-        Task Atualizar(EnderecoViewModel obj);
+        Task IncluirAsync(EnderecoViewModel obj);
+        Task AtualizarAsync(EnderecoViewModel obj);
         Task<EnderecoViewModel> ConsultarPorId(int id);
-        IEnumerable<EnderecoViewModel> Listar();
-        IEnumerable<EnderecoViewModel> ListarPorCliente(int IdCliente);
-        void Inativar(int id);
+        Task<IEnumerable<EnderecoViewModel>> Listar();
+        Task<IEnumerable<EnderecoViewModel>> ListarPorCliente(int IdCliente);
+        Task Inativar(int id);
     }
 }

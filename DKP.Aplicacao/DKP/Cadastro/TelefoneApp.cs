@@ -8,7 +8,7 @@ using DKP.ViewModel.DKP;
 
 namespace DKP.Aplicacao.DKP.Cadastro
 {
-    public sealed class TelefoneApp /*: ITelefoneApp*/
+    public sealed class TelefoneApp : ITelefoneApp
     {
         private readonly ITelefoneRepository _TelefoneRepository;
         private readonly IMapper _mapper = MapperConfig.RegisterMappers();
@@ -20,45 +20,45 @@ namespace DKP.Aplicacao.DKP.Cadastro
             _TelefoneRepository = telefoneRepository;
         }
 
-        //public void Atualizar(TelefoneViewModel oTelefoneViewModel)
-        //{
-        //    var oTelefoneEntity = _mapper.Map<TelefoneEntity>(oTelefoneViewModel);
-        //    _TelefoneRepository.Atualizar(oTelefoneEntity);
-        //}
+        public async Task AtualizarAsync(TelefoneViewModel oTelefoneViewModel)
+        {
+            var oTelefoneEntity = _mapper.Map<TelefoneEntity>(oTelefoneViewModel);
+            await _TelefoneRepository.AtualizarAsync(oTelefoneEntity);
+        }
 
-        //public TelefoneViewModel ConsultarPorId(int id)
-        //{
-        //    var oTelefoneEntity = _TelefoneRepository.ConsultarPorId(id);
-        //    var oTelefoneViewModel = _mapper.Map<TelefoneViewModel>(oTelefoneEntity);
-        //    return oTelefoneViewModel;
-        //}
+        public async Task<TelefoneViewModel> ObterPorIdAsync(int id)
+        {
+            var oTelefoneEntity = await _TelefoneRepository.ObterPorIdAsync(id);
+            var oTelefoneViewModel = _mapper.Map<TelefoneViewModel>(oTelefoneEntity);
+            return oTelefoneViewModel;
+        }
 
-        //public void Inativar(int id)
-        //{
-        //    _TelefoneRepository.Inativar(id);
-        //}
+        public void InativarAsync(int id)
+        {
+            _TelefoneRepository.InativarAsync(id);
+        }
 
-        //public void Incluir(TelefoneViewModel enderecoVM)
-        //{
-        //    var oTelefoneEntity = _mapper.Map<TelefoneEntity>(enderecoVM);
-        //    oTelefoneEntity.FlAtivo = true;
-        //    oTelefoneEntity.DtCadastro = DateTime.Now;
-        //    _TelefoneRepository.Incluir(oTelefoneEntity);
-        //}
+        public async Task InserirAsync(TelefoneViewModel enderecoVM)
+        {
+            var oTelefoneEntity = _mapper.Map<TelefoneEntity>(enderecoVM);
+            oTelefoneEntity.FlAtivo = true;
+            oTelefoneEntity.DtCadastro = DateTime.Now;
+            await _TelefoneRepository.InserirAsync(oTelefoneEntity);
+        }
 
-        //public IEnumerable<TelefoneViewModel> Listar()
-        //{
-        //    var lstTelefoneEntity = _TelefoneRepository.Listar();
-        //    var lstTelefoneViewModel = _mapper.Map<IEnumerable<TelefoneViewModel>>(lstTelefoneEntity);
-        //    return lstTelefoneViewModel;
-        //}
+        public async Task<IEnumerable<TelefoneViewModel>> ListarAsync()
+        {
+            var lstTelefoneEntity = await _TelefoneRepository.ListarAsync();
+            var lstTelefoneViewModel = _mapper.Map<IEnumerable<TelefoneViewModel>>(lstTelefoneEntity);
+            return lstTelefoneViewModel;
+        }
 
-        //public IEnumerable<TelefoneViewModel> ListarPorCliente(int IdCliente)
-        //{
-        //    var lstTelefoneEntity = _TelefoneRepository.ListarPorCliente(IdCliente);
-        //    var lstTelefoneViewModel = _mapper.Map<IEnumerable<TelefoneViewModel>>(lstTelefoneEntity);
-        //    return lstTelefoneViewModel;
-        //}
+        public async Task<IEnumerable<TelefoneViewModel>> ListarPorClienteAsync(int IdCliente)
+        {
+            var lstTelefoneEntity = await _TelefoneRepository.ListarPorClienteAsync(IdCliente);
+            var lstTelefoneViewModel = _mapper.Map<IEnumerable<TelefoneViewModel>>(lstTelefoneEntity);
+            return lstTelefoneViewModel;
+        }
     }
 
 }

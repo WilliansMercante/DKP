@@ -261,3 +261,4 @@ D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\bin\Debug\net7.0\runtimes\browser\lib\
 D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.Messages.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Diagnostics.EventLog.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.UI.Web\obj\Debug\net7.0\DKP.UI.Web.sourcelink.json

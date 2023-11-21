@@ -13,3 +13,4 @@ D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\refint\DKP.Infra.dll
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.pdb
 D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\ref\DKP.Infra.dll
+D:\Desempregado\DKP\DKP.UI.Web\DKP.Infra\obj\Debug\net7.0\DKP.Infra.sourcelink.json
