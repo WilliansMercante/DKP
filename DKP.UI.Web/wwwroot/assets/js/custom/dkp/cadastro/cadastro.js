@@ -200,7 +200,6 @@
         let dtNascimento = $("#Cliente_DtNascimento").val();
         let cpfLimpo = limparCPF(cpfFormatado);
         let nome = $("#Cliente_Nome").val();
-        let idSexo = $("#Cliente_IdSexo").val();
         let rg = $("#Cliente_Rg").val();
         let flAtivo = true;
 
@@ -214,9 +213,9 @@
             flAtivo = false;
         }
 
-        let dados = { flAtivo: flAtivo, id: id, cpf: cpfLimpo, nome: nome, dtNascimento: dtNascimento, idSexo: idSexo, rg: rg }
+        let dados = { flAtivo: flAtivo, id: id, cpf: cpfLimpo, nome: nome, dtNascimento: dtNascimento, rg: rg }
 
-        if (cpfLimpo != '' && nome != '' && dtNascimento != '' && idSexo != '') {
+        if (cpfLimpo != '' && nome != '' && dtNascimento != '') {
 
             requisicao("/DKP/Cliente/Cadastro", "POST", dados).done(function (retorno) {
 
@@ -512,7 +511,9 @@
     }
 
     async function obterTelefones(idCliente) {
-        return await requisicao("/DKP/Telefone/ListarPorCliente/" + idCliente, "GET");
+
+        let dados = { idCliente: idCliente }
+        return await requisicao("/DKP/Telefone/ListarPorCliente/", "GET", dados);
     }
 
 

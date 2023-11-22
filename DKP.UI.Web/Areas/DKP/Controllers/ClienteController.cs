@@ -1,6 +1,4 @@
-﻿using DKP.Aplicacao.DKP.Cadastro;
-using DKP.Aplicacao.DKP.Cadastro.Interfaces;
-using DKP.Dominio.Helpers;
+﻿using DKP.Aplicacao.DKP.Cadastro.Interfaces;
 using DKP.UI.Web.Areas.DKP.ViewModels;
 using DKP.UI.Web.Controllers;
 using DKP.ViewModel.DKP;
@@ -14,25 +12,18 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
     public class ClienteController : BaseController
     {
         private readonly IClienteApp _clienteApp;
-        private readonly ITelefoneApp _telefoneApp;
-        private readonly IEnderecoApp _enderecoApp;
         private readonly ITipoTelefoneApp _tipoTelefoneApp;
         private readonly ITipoEnderecoApp _tipoEnderecoApp;
-
 
         public ClienteController
         (
             IClienteApp clienteApp,
-            ITelefoneApp telefoneApp,
-            IEnderecoApp enderecoApp,
             ITipoTelefoneApp tipoTelefoneApp,
             ITipoEnderecoApp tipoEnderecoApp
 
         )
         {
             _clienteApp = clienteApp;
-            _telefoneApp = telefoneApp;
-            _enderecoApp = enderecoApp;
             _tipoTelefoneApp = tipoTelefoneApp;
             _tipoEnderecoApp = tipoEnderecoApp;
         }
@@ -58,7 +49,6 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         [HttpGet]
         public async Task<JsonResult> Pesquisar(string nome, string cpf, DateTime? dtNascimento)
         {
-
             try
             {
                 var lstClientesVM = await _clienteApp.Consultar(nome, cpf, dtNascimento);
@@ -103,14 +93,11 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
             }
         }
 
-        [Route("Cadastro")]
         [HttpPost]
         public async Task<JsonResult> Cadastro(ClienteViewModel clienteVM)
         {
-
             try
             {
-
                 if (clienteVM.Id > 0)
                 {
                     await _clienteApp.AtualizarAsync(clienteVM);
@@ -128,6 +115,24 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
             {
                 return Json(new { FlSucesso = false, Mensagem = ex.Message });
             }
-        } 
+        }
+        [HttpGet]
+        public async Task<IActionResult> Editar(int id)
+        {
+            CadastroViewModel cadastroVM = new CadastroViewModel();
+
+            try
+            {
+                cadastroVM.Cliente = await _clienteApp.ObterPorIdAsync(id);
+                cadastroVM.LstTiposEndereco = new SelectList(await _tipoEnderecoApp.ListarAsync(), "Id", "Tipo").ToList();
+                cadastroVM.LstTiposTelefone = new SelectList(await _tipoTelefoneApp.ListarAsync(), "Id", "Tipo").ToList();
+            }
+            catch (Exception ex)
+            {
+                ExibirMensagem(ex.Message, TipoMensagem.Erro);
+            }
+
+            return View("Cadastro", cadastroVM);
+        }
     }
 }

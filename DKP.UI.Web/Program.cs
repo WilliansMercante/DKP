@@ -32,6 +32,7 @@ FluentMapper.Initialize(config =>
     config.AddMap(new TipoEnderecoMapping());
     config.AddMap(new TipoTelefoneMapping());
     config.AddMap(new EnderecoMapping());
+    config.AddMap(new TelefoneMapping());
     config.ForDommel();
 });
 

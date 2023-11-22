@@ -2,6 +2,8 @@
 
 using System.Linq.Expressions;
 
+using static Dapper.SqlMapper;
+
 namespace DKP.Infra.Repositories.Interface
 {
     public interface IRepositorioBase<T> where T : EntidadeBase, new()

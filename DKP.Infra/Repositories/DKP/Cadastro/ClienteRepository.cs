@@ -3,19 +3,14 @@
 using DKP.Dominio.DKP.Cadastro.Entidades;
 using DKP.Dominio.DKP.Cadastro.Repository;
 
+using Dommel;
+
+using static Dapper.SqlMapper;
+
 namespace DKP.Infra.Repositories.DKP.Cadastro
 {
     public sealed class ClienteRepository : RepositorioBase<ClienteEntity>, IClienteRepository
-    {
-        public ClienteRepository()
-        {
-        }
-
-        public Task<List<ClienteEntity>> BuscarUltimos20AtivosAsync()
-        {
-            throw new NotImplementedException();
-        }
-
+    {       
         public async Task InativarAsync(int id)
         {
             var oClienteEntity = await ObterPorIdAsync(id);
@@ -33,14 +28,13 @@ namespace DKP.Infra.Repositories.DKP.Cadastro
         }
 
         public async Task<IEnumerable<ClienteEntity>> ConsultarAsync(string nome, string cpf, DateTime? dtNascimento)
-        {           
+        {
 
             using (var connection = DbConnect.Connection)
             {
 
                 string query = "SELECT * FROM DKP.cadastro.TB_CLIENTE WHERE 1 = 1";
 
-                // Adiciona condições apenas se os parâmetros não forem nulos ou vazios
                 if (!string.IsNullOrEmpty(nome))
                 {
                     query += " AND NM_CLIENTE = @Nome";
@@ -51,13 +45,11 @@ namespace DKP.Infra.Repositories.DKP.Cadastro
                     query += " AND NR_CPF = @CPF";
                 }
 
-                // Adiciona a condição opcional para a data de nascimento se for fornecida
                 if (dtNascimento.HasValue)
                 {
                     query += " AND DT_NASCIMENTO = @DataNascimento";
                 }
 
-                // Executa a consulta
                 var parametros = new { Nome = nome, CPF = cpf, DataNascimento = dtNascimento };
                 var resultados = connection.Query<ClienteEntity>(query, parametros);
 
@@ -69,18 +61,62 @@ namespace DKP.Infra.Repositories.DKP.Cadastro
         {
             using (var connection = DbConnect.Connection)
             {
+                string query = "SELECT * FROM DKP.cadastro.TB_CLIENTE C";
 
-                string query = "SELECT * FROM DKP.cadastro.TB_CLIENTE WHERE 1 = 1";
+                query += " LEFT JOIN DKP.cadastro.TB_ENDERECO E ON C.ID_CLIENTE = E.ID_CLIENTE";
+                query += " LEFT JOIN DKP.cadastro.TB_TELEFONE T ON C.ID_CLIENTE = T.ID_CLIENTE";
 
-          
                 if (!string.IsNullOrEmpty(cpf))
                 {
-                    query += " AND NR_CPF = @CPF";               }
+                    query += " WHERE C.NR_CPF = @CPF";
+                }
 
                 var parametros = new { CPF = cpf };
-                var resultados = connection.Query<ClienteEntity>(query, parametros);
+
+                var resultados = await connection.QueryAsync<ClienteEntity, EnderecoEntity, TelefoneEntity, ClienteEntity>(
+                     query,
+                     (cliente, endereco, telefone) =>
+                     {
+                         if (cliente.Enderecos == null)
+                             cliente.Enderecos = new List<EnderecoEntity>();
+
+                         cliente.Enderecos.Add(endereco);
+
+                         if (cliente.Telefones == null)
+                             cliente.Telefones = new List<TelefoneEntity>();
+
+                         cliente.Telefones.Add(telefone);
+
+                         return cliente;
+                     },
+                     parametros,
+                     splitOn: "ID_ENDERECO,ID_TELEFONE" 
+                 );
 
                 return resultados.ToList();
+            }
+        }
+
+
+
+
+
+
+
+
+        public async Task<int> InserirRetornaIdAsync(ClienteEntity clienteEntity)
+        {
+            await InserirAsync(clienteEntity);
+            var oClienteEntity = await Primeiro(clienteEntity.CPF);
+            return oClienteEntity.Id;
+        }
+
+        public async Task<ClienteEntity> Primeiro(string cpf)
+        {
+            using (var connection = DbConnect.Connection)
+            {
+                var oCLienteEntity = await connection.FirstOrDefaultAsync<ClienteEntity>(p => p.CPF == cpf);
+                return oCLienteEntity;
             }
         }
     }

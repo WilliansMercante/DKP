@@ -55,7 +55,7 @@
             novaLinha.append($('<td>').text(cliente.rg ? cliente.rg : ''));
             novaLinha.append($(cliente.flAtivo ? '<td class="text-center" style="color: blue;"  title="Ativo"> <i class="text-center" data-feather="thumbs-up" ></i> <span class="text-center"></span></td>' : '<td class="text-center" style="color: red;" title="Inativo"> <i class="text-center" data-feather="thumbs-down"></i> <span class="text-center"></span></td>'));
             novaLinha.append($('<td>').text(moment(cliente.dtCadastro).format("DD/MM/YYYY HH:mm:ss")));
-            novaLinha.append($('<td>').html('<a style="width:40px; height:40px" class="editar btn btn-warning bd-placeholder-img rounded-circle" title="Editar" href="/Cliente/Cliente/Editar/' + cliente.id + '"><i style="margin-top: 2px; margin-left: -1px;" class="align-middle me-2" data-feather="edit"></i></a>'));
+            novaLinha.append($('<td>').html('<a style="width:40px; height:40px" class="editar btn btn-warning bd-placeholder-img rounded-circle" title="Editar" href="/DKP/Cliente/Editar/' + cliente.id + '"><i style="margin-top: 2px; margin-left: -1px;" class="align-middle me-2" data-feather="edit"></i></a>'));
 
             // adiciona a linha à tabela
             tabela.append(novaLinha);

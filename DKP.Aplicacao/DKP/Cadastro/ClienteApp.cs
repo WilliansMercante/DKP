@@ -47,8 +47,8 @@ namespace DKP.Aplicacao.DKP.Cadastro
             var oClienteEntity = _mapper.Map<ClienteEntity>(clienteVM);
             oClienteEntity.DtCadastro = DateTime.Now;
             oClienteEntity.FlAtivo = true;
-            await _ClienteRepository.InserirAsync(oClienteEntity);
-            return oClienteEntity.Id;
+            var idRetorno = await _ClienteRepository.InserirRetornaIdAsync(oClienteEntity);
+            return idRetorno;
         }
 
         public async Task<IEnumerable<ClienteViewModel>> ListarAsync()

@@ -19,14 +19,12 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         {
             _telefoneApp = telefoneApp;
         }
-
-        [Route("Cadastro")]
+        
         [HttpPost]
         public async Task<JsonResult> Cadastro(TelefoneViewModel telefoneVM)
         {
             try
             {
-
                 ExcecaoDominioHelper.Validar(telefoneVM.Numero == null || telefoneVM.DDD == null || telefoneVM.IdTipoTelefone == 0, "Telefone Inválido!");
                 telefoneVM.Numero = RetiraCaracterHelper.RetiraCaracteres(telefoneVM.Numero);
                 await _telefoneApp.InserirAsync(telefoneVM);
@@ -41,12 +39,10 @@ namespace DKP.UI.Web.Areas.DKP.Controllers
         }
 
         [HttpGet]
-        [Route("ListarPorCliente/{idCliente}")]
         public async Task<JsonResult> ListarPorCliente(int idCLiente)
         {
             try
             {
-
                 ExcecaoDominioHelper.Validar(idCLiente == 0, "Sem parâmetro");
                 var lstEnderecoVM = await _telefoneApp.ListarPorClienteAsync(idCLiente);
 
